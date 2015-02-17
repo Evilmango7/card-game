@@ -3,13 +3,14 @@ $(document).ready(function(){
     cardDeck.spread(); // show it
 
     var hand = [];
+    var computerHand = [];
     var showError = function(msg){
         $('#error').html(msg).show();
         setTimeout(function(){
             $('#error').fadeOut('slow');
         },3000);
     }
-    var showHand = function(){
+    var showHands = function(){
         var el = $('#yourHand')
         el.html('');
         for(var i=0;i<hand.length;i++){
@@ -50,7 +51,7 @@ $(document).ready(function(){
             return;
         }
         var c = hand.pop();
-        showHand();
+        showHands();
         cardDeck.addCard(c);
         cardDeck.spread();
     });
