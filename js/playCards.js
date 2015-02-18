@@ -21,7 +21,7 @@ $(document).ready(function(){
         cardDeck.shuffle();
         cardDeck.spread(); // update card table
     }
-    var doDrawCard = function(){
+    var doDrawCard1 = function(){
         var c = cardDeck.draw();
         if(!c){
             showError('no more cards');
@@ -29,7 +29,17 @@ $(document).ready(function(){
         }
         hand[hand.length] = c;
         cardDeck.spread();
-        showHand();
+        showHands();
+    }
+     var doDrawCard2 = function(){
+        var c = cardDeck.draw();
+        if(!c){
+            showError('no more cards');
+            return;
+        }
+        computerHand[computerHand.length] = c;
+        cardDeck.spread();
+        showHands();
     }
     var doOrderByRank = function(){
         cardDeck.orderByRank();
