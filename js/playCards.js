@@ -56,7 +56,8 @@ $(document).ready(function(){
         cardDeck.spread(); // update card table
     };
     $('#shuffler').click(doShuffle);
-    $('#draw').click(doDrawCard);
+    $('#draw1').click(doDrawCard);
+    $('#draw2').click(doDrawCard);
     $('#shuffleDraw').click(function(){
         doShuffle();
         doDrawCard();
