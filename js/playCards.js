@@ -60,7 +60,8 @@ $(document).ready(function(){
     $('#draw2').click(doDrawCard1);
     $('#shuffleDraw').click(function(){
         doShuffle();
-        doDrawCard();
+        doDrawCard1();
+        doDrawCard2();
     });
     $('#addCard1').click(function(){
         if(!hand.length){
