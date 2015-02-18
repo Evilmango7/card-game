@@ -4,23 +4,24 @@ $(document).ready(function(){
 
     var hand = [];
     var computerHand = [];
+    
     var showError = function(msg){
         $('#error').html(msg).show();
         setTimeout(function(){
             $('#error').fadeOut('slow');
         },3000);
-    }
+    };
     var showHands = function(){
         var el = $('#yourHand')
         el.html('');
         for(var i=0;i<hand.length;i++){
             el.append(hand[i].getHTML());
-        };
-    }
+        }
+    };
     var doShuffle = function(){
         cardDeck.shuffle();
         cardDeck.spread(); // update card table
-    }
+    };
     var doDrawCard1 = function(){
         var c = cardDeck.draw();
         if(!c){
@@ -30,7 +31,7 @@ $(document).ready(function(){
         hand[hand.length] = c;
         cardDeck.spread();
         showHands();
-    }
+    };
      var doDrawCard2 = function(){
         var c = cardDeck.draw();
         if(!c){
@@ -40,15 +41,15 @@ $(document).ready(function(){
         computerHand[computerHand.length] = c;
         cardDeck.spread();
         showHands();
-    }
+    };
     var doOrderByRank = function(){
         cardDeck.orderByRank();
         cardDeck.spread(); // update card table
-    }
+    };
     var doOrderBySuit = function(){
         cardDeck.orderBySuit();
         cardDeck.spread(); // update card table
-    }
+    };
     $('#shuffler').click(doShuffle);
     $('#draw').click(doDrawCard);
     $('#shuffleDraw').click(function(){
