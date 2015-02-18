@@ -56,12 +56,22 @@ $(document).ready(function(){
         doShuffle();
         doDrawCard();
     });
-    $('#addCard').click(function(){
+    $('#addCard1').click(function(){
         if(!hand.length){
             showError('your hand is empty');
             return;
         }
         var c = hand.pop();
+        showHands();
+        cardDeck.addCard(c);
+        cardDeck.spread();
+    });
+     $('#addCard2').click(function(){
+        if(!computerHand.length){
+            showError('your computer hand is empty');
+            return;
+        }
+        var c = computerHand.pop();
         showHands();
         cardDeck.addCard(c);
         cardDeck.spread();
