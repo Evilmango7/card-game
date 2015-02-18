@@ -70,7 +70,7 @@ $(document).ready(function(){
         }
         var c = hand.pop();
         showHands();
-        cardDeck.addCard(c);
+        cardDeck.addCard1(c);
         cardDeck.spread();
     });
      $('#addCard2').click(function(){
@@ -80,7 +80,7 @@ $(document).ready(function(){
         }
         var c = computerHand.pop();
         showHands();
-        cardDeck.addCard(c);
+        cardDeck.addCard2(c);
         cardDeck.spread();
     });
     $('#orderByRank').click(doOrderByRank);
